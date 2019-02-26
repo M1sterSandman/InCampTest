@@ -8,7 +8,6 @@ class Student extends Knowledge {
         super(level);
         this.name=name;
     }
-
 }
 class University extends Student {
     constructor(name) {
@@ -18,7 +17,6 @@ class University extends Student {
     }
     addStudent(name){
         this.studentsList.push(name);
-        console.log(this.studentsList);
     }
 }
 class Internship extends University {
@@ -27,7 +25,6 @@ class Internship extends University {
         this.name=name;
         this.suitableStudents=[];
     }
-
     getStudent(){
         return this.suitableStudents;
     }
@@ -36,11 +33,9 @@ class Internship extends University {
             if(university.level.level!==null && university.level.level>=4) {
                 this.suitableStudents.push(university.name);
             }
-
         });
     }
 }
-
 
 let high_lvl_knowledge = new Knowledge("5");
 let mid_lvl_knowledge = new Knowledge("4");
@@ -54,10 +49,8 @@ university.addStudent(new Student("Julia Veselkina", high_lvl_knowledge));
 university.addStudent(new Student("Maria Perechrest", mid_lvl_knowledge));
 
 university.addStudent(some_student);
-console.log(university.studentsList);
 
 let internship = new Internship("Interlink");
-
 internship.checkStudent(university);
 
 console.log("List of internship's students:");
